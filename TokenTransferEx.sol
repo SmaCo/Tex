@@ -12,19 +12,19 @@ contract ExternalTokenInterface{
 contract TokenTransferEx{
 	address owner;
 	modifier isContractOwner(){
-			require(msg.sender == owner);
-			_;
+		require(msg.sender == owner);
+		_;
 	}
 
 	function TokenTransferEx() public
 	{
-			owner = msg.sender;
+		owner = msg.sender;
 	}
 
 	function transferExternalTokenAllToOwner(address externalTokenContractAddress) 
-		isContractOwner
-		public
-		returns(bool result)
+	isContractOwner
+	public
+	returns(bool result)
 	{
 		// use the interface to access the external token smart contract
 		ExternalTokenInterface externalToken = ExternalTokenInterface(externalTokenContractAddress);
@@ -35,9 +35,9 @@ contract TokenTransferEx{
 
 	// select how many tokens are to be transferred to whom
 	function transferExternalToken(address externalTokenContractAddress, address _to, uint256 _amount) 
-		isContractOwner
-		public
-		returns(bool result)
+	isContractOwner
+	public
+	returns(bool result)
 	{
 		// use the interface to access the external token smart contract
 		ExternalTokenInterface externalToken = ExternalTokenInterface(externalTokenContractAddress);
@@ -47,5 +47,5 @@ contract TokenTransferEx{
 		result = externalToken.transfer(_to, _amount);
 		return result;
 	}
-	
+
 }
