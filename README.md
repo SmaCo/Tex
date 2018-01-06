@@ -1,8 +1,9 @@
 # Tex
+You want your smart contract to be able to forward ERC 20 tokens it has received?
 Add this to your smart contract in order to get out ethereum tokens sent to your contract address
 
 ## Why Tex
-If you are into Ethereum, tokens and smart contracts, you might know about the issue, when ERC20 tokens are sent to an address not owned by a "person" but by a smart contract.
+If you are into Ethereum, tokens and smart contracts, you might know about the issue: when ERC20 tokens are sent to an address not owned by a "person" but by a smart contract, you can't get them out anymore.
 For example:
 This is the address of the smart contract that provides the EOS token.
 https://etherscan.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0
